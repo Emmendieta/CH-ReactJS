@@ -1,0 +1,49 @@
+/* ---- HEADER / NAVBAR ---- */
+
+#navBar {
+  display: flex;
+  width: 100%;
+  background-color: black !important;
+}
+
+#headerNavbarDiv {
+  background-color: black;
+}
+
+/* ---- Logo ---- */
+
+#hdLgImg {
+  margin: 5px 0 5px 15px;
+  width: 75px;
+  height: auto;
+  border-radius: 35px;
+}
+
+/* ---- Links ---- */
+
+#hdLksUl {
+  display: flex;
+  margin: 5px;
+  align-items: center;
+}
+
+#hdLksUl li {
+  margin: 0 10px;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#hdLksUl li:hover {
+  text-decoration: underline;
+  color: red;
+  font-size: 25px;
+}
+
+/* ---- CartWidget ---- */
+
+#hdNbCart {
+  padding-right: 15px;
+  cursor: pointer;
+}
