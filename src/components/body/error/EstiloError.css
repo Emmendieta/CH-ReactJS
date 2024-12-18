@@ -1,0 +1,10 @@
+.divError {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgError {
+    width: 90%;
+    height: auto;
+}

@@ -1,0 +1,42 @@
+.imgItemDetailContainer {
+    width: 300px;
+    height: auto;
+}
+
+.tarjetaProducto {
+    transition: 1s;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.tarjetaProducto:hover {
+    transition: 1.5s;
+    box-shadow: rgb(85, 85, 85) 5px 5px 5px 5px;
+}
+
+.h1ItemDetailContainer {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.precioItemDetailContainer, .cantidadItemDetailContainer, .categoriaItemDetailContainer, 
+.descripcionItemDetailContainer, .btnsItemDetailContainer {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.h6ItemDetailContainer, .pItemDetailContainer {
+    line-height: 1;
+}
+
+.h6ItemDetailContainer {
+    font-weight: bold;
+}
+
+.btnDetallesDetailContainer, .btnAgregarCarritosDetailContainer {
+    margin-right: 5px;
+    margin-left: 5px;
+}
