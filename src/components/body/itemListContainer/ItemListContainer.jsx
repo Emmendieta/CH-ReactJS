@@ -10,21 +10,23 @@ function ItemListContainer() {
     const { categoria } = useParams();
     const [productosFiltrados, setProductosFiltrados] = useState([]);
     const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true); // Estado de carga
 
     useEffect(() => {
+        setIsLoading(true); // Al cambiar de categoría, se marca como cargando
         fetchProductos()
             .then((productos) => {
-                const filtrados = categoria ? productos.filter((productoBD) => productoBD.categoria.toLowerCase() === categoria.toLowerCase()): productos;
+                const filtrados = categoria ? productos.filter((productoBD) => productoBD.categoria.toLowerCase() === categoria.toLowerCase()) : productos;
                 if (filtrados.length === 0) { setError("No existe la categoría indicada");
                 } else {
                     setProductosFiltrados(filtrados);
                     setError(null);
                 }
-            }).catch(() => setError("Hubo un problema al cargar los datos."));
-    }, [categoria]);
+            }).catch(() => setError("Hubo un problema al cargar los datos.")).finally(() => setIsLoading(false)); // Cuando termine, marca como no cargando
+    }, [categoria]); // El useEffect se ejecuta cada vez que cambie el parámetro `categoria`
 
     if (error) return <Error mensaje={error} />;
-    if (productosFiltrados.length === 0) return (<SweetAlert2Wait/>);
+    if (isLoading) return <SweetAlert2Wait/>; 
 
     return (
         <div className="divItemListContainer">
@@ -35,4 +37,4 @@ function ItemListContainer() {
     );
 }
 
-export default ItemListContainer; 
+export default ItemListContainer;

@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import Swal from 'sweetalert2';
 
-const SweetAlert2Wait = ({ title = "Cargando:", timer = 1000 }) => {
+const SweetAlert2Wait = ({ title = "Cargando:", timer = 2000 }) => { 
     const timerInterval = useRef(null);
+
     useEffect(() => {
         Swal.fire({
             title: title,
@@ -10,13 +11,13 @@ const SweetAlert2Wait = ({ title = "Cargando:", timer = 1000 }) => {
             timer: timer, 
             timerProgressBar: true,
             didOpen: () => { Swal.showLoading(); },
-            willClose: () => { clearInterval(timerInterval.current); },
+            willClose: () => {  clearInterval(timerInterval.current); },
         });
-        // Limpio el intervalo cuando se cierra el componente:
-        return () => { clearInterval(timerInterval.current); };
-    }, [title, timer]);
+        // Limpio y cierrola alerta cuando el componente se desmonta:
+        return () => { Swal.close(); };
+    }, [title, timer]); // Dependencias para reiniciar la alerta si cambian
     // Este componente no renderiza nada en el DOM (sólo muestra la alerta):
-    return null;
+    return null; 
 };
 
 export default SweetAlert2Wait;
