@@ -1,4 +1,4 @@
-import React from "react";
+import './EstiloCartWidget.css';
 
 function CartWidget() {
     return (
@@ -16,7 +16,7 @@ function CartWidget() {
             fontWeight: "bold",
             zIndex: "1"
         }}>
-            0 {/* Este número puede ser dinámico en el futuro */}
+            0 {/* Valor que muestra por defecto el CartWidget */}
         </span>
     </div>
     );

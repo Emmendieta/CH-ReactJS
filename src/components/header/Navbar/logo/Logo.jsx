@@ -1,6 +1,5 @@
-import React from "react";
-import imagenLogo from "../../../../assets/cuvee.png"
-
+import imagenLogo from "../../../../assets/cuvee.png";
+import './EstiloLogo.css';
 
 function Logo() {
     return (

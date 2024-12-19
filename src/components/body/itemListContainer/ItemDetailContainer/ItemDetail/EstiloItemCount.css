@@ -1,0 +1,14 @@
+.divItemCount {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    width: 100%;
+}
+
+.btnRemoveItemCount, .btnAddItemCount, .btnAgregarCarritoItemCount {
+    margin: 10px;
+}
+
+#spanItemCount {
+    align-content: center;
+}

@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import './EstiloItemDetailContainer.css';
 
-function ItemDetailContainer({ id, nombre, precio, cantidad, imagen, categoria, descripcion }) {
+function ItemDetailContainer({ id, nombre, precio, cantidad, imagen, categoria }) {
 
     //Verifico que url tiene:
     const direccionUrl = useLocation();
@@ -19,11 +19,11 @@ function ItemDetailContainer({ id, nombre, precio, cantidad, imagen, categoria, 
                 <p className='pItemDetailContainer'>{precio}</p>
                 </div>
                 <div className='cantidadItemDetailContainer'>
-                <h6 className="card-text h6ItemDetailContainer">Cantidad:</h6>
+                <h6 className="card-text h6ItemDetailContainer">Cantidad: </h6>
                 <p className='pItemDetailContainer'>{cantidad}</p>
                 </div>
                 <div className='categoriaItemDetailContainer'>
-                <h6 className="card-text h6ItemDetailContainer">Categoria:</h6>
+                <h6 className="card-text h6ItemDetailContainer">Categoria: </h6>
                 <p className='pItemDetailContainer'>{categoria}</p>
                 </div>
                 <div className='btnsItemDetailContainer'>

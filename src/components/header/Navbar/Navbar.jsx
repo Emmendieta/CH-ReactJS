@@ -2,6 +2,7 @@ import CartWidget from "./cartWidget/CartWidget";
 import Logo from "./logo/Logo";
 import Links from "./links/Links";
 import { Outlet } from "react-router-dom";
+import './EstiloNavbar.css';
 
 function Navbar() {
     return (

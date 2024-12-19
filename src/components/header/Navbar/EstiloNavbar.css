@@ -1,0 +1,11 @@
+/* ---- HEADER / NAVBAR ---- */
+
+#navBar {
+    display: flex;
+    width: 100%;
+    background-color: black !important;
+}
+
+#headerNavbarDiv {
+    background-color: black;
+}
