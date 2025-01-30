@@ -16,7 +16,6 @@ const SweetAlert2Wait = ({ title = "Cargando:", timer = 2000 }) => {
         // Limpio y cierrola alerta cuando el componente se desmonta:
         return () => { Swal.close(); };
     }, [title, timer]); // Dependencias para reiniciar la alerta si cambian
-    // Este componente no renderiza nada en el DOM (sólo muestra la alerta):
     return null; 
 };
 

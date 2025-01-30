@@ -6,10 +6,10 @@ function CartWidget() {
   const { cart } = useCart(); // Obtener los productos del carrito desde el contexto
   const navigate = useNavigate(); // Hook para redirigir
 
-  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Obtener cantidad total de productos en el carrito
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0); // Obtengo la cantidad total de productos en el carrito
 
   const handleClick = () => {
-    navigate('/cart'); // Redirigir al carrito
+    navigate('/cart'); // Redirecciono al carrito
   };
 
   return (

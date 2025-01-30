@@ -7,36 +7,39 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    const addToCart = (productId, quantity, price, title) => {
+    // Agregar al carrito
+    const addToCart = (productId, quantity, price, title, image) => {
         const existingProduct = cart.find((item) => item.id === productId);
-        
         if (existingProduct) {
-            // Aquí reemplazamos la cantidad existente por la nueva
             setCart(
                 cart.map((item) =>
                     item.id === productId
-                        ? { ...item, quantity } // Reemplazamos la cantidad por la nueva
+                        ? { ...item, quantity: item.quantity + quantity }
                         : item
                 )
             );
         } else {
-            // Si el producto no existe, simplemente lo agregamos
-            setCart([...cart, { id: productId, quantity, price, title }]);
+            setCart([...cart, { id: productId, quantity, price, title, image }]);
         }
     };
 
-    // Obtener cantidad total de productos en el carrito
+    //Obtengo la cantidad total de productos en el carrito:
     const getCartItemCount = () => {
         return cart.reduce((acc, item) => acc + item.quantity, 0);
     };
 
-    // Eliminar un producto del carrito
+    //Elimino un producto del carrito especifico:
     const removeFromCart = (productId) => {
         setCart(cart.filter((item) => item.id !== productId));
     };
 
-    // Eliminar todos los productos del carrito
+    // Elimino todos los productos del carrito:
     const removeAllFromCart = () => {
+        setCart([]);
+    };
+
+    // Limpio el carrito como si se hizo correctamente la compra:
+    const clearCart = () => {
         setCart([]);
     };
 
@@ -48,6 +51,7 @@ export const CartProvider = ({ children }) => {
                 getCartItemCount,
                 removeFromCart,
                 removeAllFromCart,
+                clearCart
             }}
         >
             {children}

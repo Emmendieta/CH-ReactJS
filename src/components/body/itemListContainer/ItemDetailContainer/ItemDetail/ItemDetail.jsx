@@ -1,4 +1,4 @@
-import { useCart } from "../../../../../assets/Context/cartContext.jsx"; // Importa el hook useCart
+import { useCart } from "../../../../../assets/Context/cartContext.jsx";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { doc, getDoc } from "firebase/firestore";
@@ -10,7 +10,7 @@ import SweetAlert2Wait from "../../../sweetAlert2/SweetAlert2Wait.jsx";
 
 function ItemDetail() {
     const { categoria, id } = useParams();
-    const { addToCart } = useCart(); // Accede a la función addToCart
+    const { addToCart } = useCart(); // Accedo a la función addToCart
     const [producto, setProducto] = useState(null);
     const [error, setError] = useState(null);
 
@@ -43,8 +43,8 @@ function ItemDetail() {
     }, [categoria, id]);
 
     const handleAddToCart = (cantidad) => {
-        // Llamamos a la función addToCart del contexto para agregar el producto al carrito
-        addToCart(producto.id, cantidad, producto.precio, producto.nombre);
+        //Uso la función addToCart del contexto para agregar el producto al carrito:
+        addToCart(producto.id, cantidad, producto.precio, producto.nombre, producto.imagen);
     };
 
     if (error) return <Error mensaje={error} />;

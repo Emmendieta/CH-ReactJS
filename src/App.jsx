@@ -8,8 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetail from './components/body/itemListContainer/ItemDetailContainer/ItemDetail/ItemDetail';
 import ItemListContainer from './components/body/itemListContainer/ItemListContainer';
 import { CartProvider } from './assets/Context/cartContext.jsx';
-import CartWidget from './components/header/Navbar/cartWidget/CartWidget.jsx'; // Asegúrate de que la ruta esté correcta
-import Cart from './components/body/Cart/Cart.jsx'; // Asegúrate de que la ruta esté correcta
+import Cart from './components/body/Cart/Cart.jsx'; 
 
 function App() {
     return (
