@@ -7,22 +7,26 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetail from './components/body/itemListContainer/ItemDetailContainer/ItemDetail/ItemDetail';
 import ItemListContainer from './components/body/itemListContainer/ItemListContainer';
+import { CartProvider } from './assets/Context/cartContext.jsx';
+import CartWidget from './components/header/Navbar/cartWidget/CartWidget.jsx'; // Asegúrate de que la ruta esté correcta
+import Cart from './components/body/Cart/Cart.jsx'; // Asegúrate de que la ruta esté correcta
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Navbar />}>
-                    <Route index element={<Home  />} />
-                    <Route path='productos/:categoria/:id' element={<ItemDetail />}/>
-                    <Route path='categoria/:categoria' element={<ItemListContainer />}/>
-                    <Route path="*" element={<Error/>} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <CartProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navbar />}>
+                        <Route index element={<Home />} />
+                        <Route path='productos/:categoria/:id' element={<ItemDetail />} />
+                        <Route path='categoria/:categoria' element={<ItemListContainer />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="*" element={<Error />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </CartProvider>
     );
 }
 
-export default App
-
-
+export default App;

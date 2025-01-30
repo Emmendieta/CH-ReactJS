@@ -28,11 +28,11 @@ function ItemDetailContainer({ id, nombre, precio, cantidad, imagen, categoria }
                 </div>
                 <div className='btnsItemDetailContainer'>
                 <Link href="#" className="btn btn-secondary btnDetallesDetailContainer" to={`${urlBase}/${id}`}>Ver detalles</Link>
-                <button href="#" className="btn btn-primary btnAgregarCarritosDetailContainer">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default ItemDetailContainer;
+export default ItemDetailContainer; 
+
