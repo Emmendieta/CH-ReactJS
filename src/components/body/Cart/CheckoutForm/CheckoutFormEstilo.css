@@ -1,0 +1,32 @@
+.checkout-form {
+    padding: 20px;
+    border: 2px solid #333; 
+    border-radius: 10px; 
+    background-color: #fff;
+    margin-top: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkout-form button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.checkout-form button:hover {
+    background-color: #27ae60;
+}

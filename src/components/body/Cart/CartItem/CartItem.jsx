@@ -1,13 +1,20 @@
 import { useCart } from '../../../../assets/Context/cartContext.jsx';
+import './CartItemEstilo.css';
 
 function CartItem({ id, title, quantity, price, image }) {
-    const { removeFromCart } = useCart(); //En caso de que quiera eliminar los productos del carrito:
-    console.log(image)
+    const { removeFromCart } = useCart();
+
     return (
-        <div className="cart-item" style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-            <img src={image} alt={title} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-            <p>{title} - {quantity} x ${price}</p>
-            <button onClick={() => removeFromCart(id)} style={{ marginLeft: '10px' }}>Eliminar</button>
+        <div className="cart-item">
+            <div className="cart-item-details">
+                <div className="cart-item-info">
+                    <img src={image} alt={title} />
+                    <p>{title} - {quantity} x ${price}</p>
+                </div>
+                <button onClick={() => removeFromCart(id)}>
+                    Eliminar
+                </button>
+            </div>
         </div>
     );
 }
